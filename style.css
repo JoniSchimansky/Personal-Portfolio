@@ -1,0 +1,12 @@
+
+:root {
+    --primary-color: #7127BA;
+    --secondary-color: #11071f;
+    --terciary-color: #1A0B2E;
+    --work-title-color: #9857D3;
+    --skills-color: #251C31;
+}
+
+body {
+    font-family: 'Preahvihear', sans-serif;
+}
