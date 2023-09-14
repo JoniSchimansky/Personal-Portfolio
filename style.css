@@ -387,7 +387,7 @@ section .header {
 footer {
     position: relative;
     display: grid;
-    grid-template-columns: 400px repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -424,15 +424,10 @@ footer .column h4{
     font-weight: 500;
 }
 
-footer .column > a{
-    display: block;
+footer .column > p{
+    display: flex;
     color: #ccc;
     margin-bottom: 1rem;
-    transition: all 0.3s ease;
-}
-
-footer .column > a:hover{
-    color: #1d4ed8;
 }
 
 /* Responsive */
@@ -460,10 +455,6 @@ footer .column > a:hover{
     .experience{
         grid-template-columns: repeat(2, 1fr);
     }
-
-    footer{
-        grid-template-columns: 1fr 200px;
-    }
 }
 
 @media (width < 600px){
@@ -482,8 +473,23 @@ footer .column > a:hover{
     .experience{
         grid-template-columns: repeat(1, 1fr);
     }
+}
 
-    footer{
-        grid-template-columns: 1fr 150px;
+@media (max-width: 900px){
+    footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    footer .column .logo {
+        margin: 0 auto 2rem;
+    }
+
+    footer .column .socials {
+        justify-content: center;
+    }
+
+    footer .column h4 {
+        margin: 0 auto 2rem;
     }
 }
