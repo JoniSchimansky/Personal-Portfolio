@@ -224,14 +224,14 @@ section .header {
     color: #ccc;
 }
 
-.pricing {
+.projects {
     margin-top: 4rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-.pricing .card {
+.projects .card {
     padding: 3rem 2rem;
     background-color: var(--terciary-color);
     display: flex;
@@ -241,52 +241,88 @@ section .header {
     transition: all 0.3s ease;
 }
 
-.pricing .card:hover {
+.projects .card:hover {
     background-color: var(--cards-hover);
     border-color: #fff;
 }
 
-.pricing .card .content {
+.projects .card .content {
     flex: 1;
     margin-bottom: 2rem;
 }
 
-.pricing .card h4 {
+.projects .card h4 {
     margin-bottom: 1rem;
     color: #fff;
     font-size: 1.2rem;
     font-weight: 500;
 }
 
-.pricing .card h3 {
+.projects .card h3 {
     color: #fff;
     border-bottom: 2px dashed #fff;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    font-size: 2rem;
+    font-size: 0.75rem;
     font-weight: 600;
 }
 
-.pricing .card p {
+.projects .card p {
     color: #fff;
     margin-bottom: 0.75rem;
 }
 
-.pricing .card p i {
+.projects .card p i {
     color: #ccc;
     font-size: 1.2rem;
     margin-right: 0.3rem;
 }
 
-.pricing .card button {
+.projects .card button {
     color: #fff;
     background-color: transparent;
     border: 2px solid #fff;
 }
 
-.pricing .card button:hover {
+.projects .card button:hover {
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
+}
+
+.projects .social-links{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.projects .social-links #github{
+    color: #ccc;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    font-size: 1.25rem;
+    border-radius: 100%;
+    transition: all 0.3s ease;
+    margin-right: 1.5rem;
+}
+
+.projects .social-links #github:hover{
+    color: #fff;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.project-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+    background-color: var(--secondary-color);
 }
 
 
@@ -356,7 +392,7 @@ footer .column > a:hover{
     .features{
         grid-template-columns: repeat(2, 1fr);
     }
-    .pricing{
+    .projects{
         grid-template-columns: repeat(2, 1fr);
     }
     footer{
@@ -373,7 +409,7 @@ footer .column > a:hover{
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .pricing{
+    .projects{
         grid-template-columns: repeat(1, 1fr);
     }
 
