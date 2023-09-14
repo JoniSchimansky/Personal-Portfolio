@@ -164,14 +164,14 @@ section .header {
     font-weight: 600;
 }
 
-.features {
+.skills {
     margin-top: 4rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
 
-.features .card {
+.skills .card {
     background-color: var(--terciary-color);
     padding: 1rem;
     border: 2px solid transparent;
@@ -179,12 +179,12 @@ section .header {
     transition: all 0.3s ease;
 }
 
-.features .card:hover {
+.skills .card:hover {
     background-color: var(--cards-hover);
     border-color: #fff;
 }
 
-.features .card span {
+.skills .card span {
     display: inline-block;
     background-color: var(--secondary-color);
     padding: 2px 9px;
@@ -194,25 +194,16 @@ section .header {
     border-radius: 5px;
 }
 
-.features .card h4 {
+.skills .card h4 {
     margin-bottom:  0.5rem;
     color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
 }
 
-.features .card p {
+.skills .card p {
     color: #ccc;
     margin-bottom: 1rem;
-}
-
-.features .card a {
-    color: #fff;
-    transition: all 0.3s ease;
-}
-
-.features .card a:hover {
-    color: var(--secondary-color);
 }
 
 /* Second section */
@@ -389,7 +380,7 @@ footer .column > a:hover{
     header .image{
         grid-area: 1/1/2/2;
     }
-    .features{
+    .skills{
         grid-template-columns: repeat(2, 1fr);
     }
     .projects{
@@ -405,7 +396,7 @@ footer .column > a:hover{
         display: none;
     }
 
-    .features{
+    .skills{
         grid-template-columns: repeat(1, 1fr);
     }
 
