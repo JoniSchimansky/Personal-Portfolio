@@ -316,6 +316,72 @@ section .header {
     background-color: var(--secondary-color);
 }
 
+/* Experience section */
+.experience {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.experience .card {
+    padding: 3rem 2rem;
+    background-color: var(--terciary-color);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent; 
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.experience .card:hover {
+    background-color: var(--cards-hover);
+    border-color: #fff;
+}
+
+.experience .card .content {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+.experience .card h4 {
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.experience .card h3 {
+    color: #fff;
+    border-bottom: 2px dashed #fff;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.experience .card p {
+    color: #fff;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.experience .card p i {
+    color: #ccc;
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+}
+
+.experience .card button {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.experience .card button:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
 
 /* Footer */
 footer {
@@ -374,18 +440,27 @@ footer .column > a:hover{
     .nav-links{
         display: none;
     }
+
     header{
         grid-template-columns: repeat(1, 1fr);
     }
+
     header .image{
         grid-area: 1/1/2/2;
     }
+
     .skills{
         grid-template-columns: repeat(2, 1fr);
     }
+
     .projects{
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .experience{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     footer{
         grid-template-columns: 1fr 200px;
     }
@@ -401,6 +476,10 @@ footer .column > a:hover{
     }
 
     .projects{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .experience{
         grid-template-columns: repeat(1, 1fr);
     }
 
