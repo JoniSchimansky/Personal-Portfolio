@@ -90,6 +90,32 @@ nav {
     background-color: var(--secondary-color);
 }
 
+nav .theme-toggle {
+    display: block;
+    min-width: 50px;
+    height: 25px;
+    background: #ccc;
+    cursor: pointer;
+    position: relative;
+    border-radius: 25px;
+}
+
+nav .theme-toggle::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: calc(25px - 4px);
+    background: var(--primary-color);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+nav #theme-toggle:checked+.theme-toggle::before {
+    left: calc(100% - (25px - 4px) - 2px);
+}
+
 .container {
     max-width: 1200px;
     margin: auto;
