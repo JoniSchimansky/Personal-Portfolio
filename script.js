@@ -28,6 +28,9 @@ const logoImage = document.getElementById("logo-image");
 const footerImage = document.getElementById("footer-logo");
 const navLinks = document.querySelectorAll(".link a");
 const toogleIcons = document.querySelectorAll(".theme-toggle-container span");
+const headerTitle = document.querySelectorAll("header .content h4");
+const headerSubTitle = document.querySelectorAll("header .content h1");
+const headerText = document.querySelectorAll("header .content p");
 
 themeToggle.addEventListener("change", () => {
     if (themeToggle.checked) {
@@ -40,6 +43,17 @@ themeToggle.addEventListener("change", () => {
         toogleIcons.forEach(icon => {
             icon.style.color = "var(--text-light-color)";
         });
+        headerTitle.forEach(title => {
+            title.style.color = "var(--text-light-color)";
+        });
+        headerSubTitle.forEach(title => {
+            title.style.color = "var(--text-light-color)";
+        });
+        headerText.forEach(text => {
+            text.style.color = "var(--p-light-color)";
+        });
+        body.classList.add("theme-light");
+        body.classList.remove("theme-dark");
     } else {
         body.style.setProperty("--background-color", "var(--dark-background-color)");
         logoImage.src = "images/logo.png";
@@ -50,6 +64,17 @@ themeToggle.addEventListener("change", () => {
         toogleIcons.forEach(icon => {
             icon.style.color = "var(--text-dark-color)";
         });
+        headerTitle.forEach(title => {
+            title.style.color = "var(--text-dark-color)";
+        });
+        headerSubTitle.forEach(title => {
+            title.style.color = "var(--text-dark-color)";
+        });
+        headerText.forEach(text => {
+            text.style.color = "var(--p-dark-color)";
+        });
+        body.classList.add("theme-dark");
+        body.classList.remove("theme-light");
     }
 });
 
@@ -63,6 +88,16 @@ if (themeToggle.checked) {
     toogleIcons.forEach(icon => {
         icon.style.color = "var(--text-light-color)";
     });
+    headerTitle.forEach(title => {
+        title.style.color = "var(--text-light-color)";
+    });
+    headerSubTitle.forEach(title => {
+        title.style.color = "var(--text-light-color)";
+    });
+    headerText.forEach(text => {
+        text.style.color = "var(--p-light-color)";
+    });
+    body.classList.add("theme-light");
 } else {
     body.style.setProperty("--background-color", "var(--dark-background-color)");
     logoImage.src = "images/logo.png";
@@ -73,4 +108,14 @@ if (themeToggle.checked) {
     toogleIcons.forEach(icon => {
         icon.style.color = "var(--text-dark-color)";
     });
+    headerTitle.forEach(title => {
+        title.style.color = "var(--text-dark-color)";
+    });
+    headerSubTitle.forEach(title => {
+        title.style.color = "var(--text-dark-color)";
+    });
+    headerText.forEach(text => {
+        text.style.color = "var(--p-dark-color)";
+    });
+    body.classList.add("theme-dark");
 }
