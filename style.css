@@ -478,6 +478,10 @@ footer .column .socials a:hover{
     border-color: var(--primary-color);
 }
 
+body.theme-light footer .column .socials a:hover {
+    color: #fff !important;
+}
+
 footer .column h4{
     color: var(--primary-color);
     margin-bottom: 2rem;

@@ -33,6 +33,8 @@ const headerSubTitle = document.querySelectorAll("header .content h1");
 const headerText = document.querySelectorAll("header .content p");
 const sectionTitles = document.querySelectorAll(".header");
 const sectionSubTitles = document.querySelectorAll(".sub-header");
+const footerSocials = document.querySelectorAll("footer .column .socials a");
+const footerText = document.querySelectorAll("footer .column > p");
 
 themeToggle.addEventListener("change", () => {
     if (themeToggle.checked) {
@@ -64,6 +66,13 @@ themeToggle.addEventListener("change", () => {
         });
         body.style.setProperty("--terciary-color", "var(--light-cards-color)");
         body.style.setProperty("--cards-hover", "var(--light-cards-hover)");
+        footerSocials.forEach(social => {
+            social.style.color = "var(--p-light-color)";
+            social.style.borderColor = "var(--p-light-color)";
+        });
+        footerText.forEach(text => {
+            text.style.color = "var(--p-light-color)";
+        });
     } else {
         body.style.setProperty("--background-color", "var(--dark-background-color)");
         logoImage.src = "images/logo.png";
@@ -93,6 +102,13 @@ themeToggle.addEventListener("change", () => {
         });
         body.style.setProperty("--terciary-color", "var(--dark-cards-color)");
         body.style.setProperty("--cards-hover", "var(--dark-cards-hover)");
+        footerSocials.forEach(social => {
+            social.style.color = "var(--p-dark-color)";
+            social.style.borderColor = "var(--p-dark-color)";
+        });
+        footerText.forEach(text => {
+            text.style.color = "var(--p-dark-color)";
+        });
     }
 });
 
@@ -124,6 +140,13 @@ if (themeToggle.checked) {
     });
     body.style.setProperty("--terciary-color", "var(--light-cards-color)");
     body.style.setProperty("--cards-hover", "var(--light-cards-hover)");
+    footerSocials.forEach(social => {
+        social.style.color = "var(--p-light-color)";
+        social.style.borderColor = "var(--p-light-color)";
+    });
+    footerText.forEach(text => {
+        text.style.color = "var(--p-light-color)";
+    });
 } else {
     body.style.setProperty("--background-color", "var(--dark-background-color)");
     logoImage.src = "images/logo.png";
@@ -152,4 +175,11 @@ if (themeToggle.checked) {
     });
     body.style.setProperty("--terciary-color", "var(--dark-cards-color)");
     body.style.setProperty("--cards-hover", "var(--dark-cards-hover)");
+    footerSocials.forEach(social => {
+        social.style.color = "var(--p-dark-color)";
+        social.style.borderColor = "var(--p-dark-color)";
+    });
+    footerText.forEach(text => {
+        text.style.color = "var(--p-dark-color)";
+    });
 }
