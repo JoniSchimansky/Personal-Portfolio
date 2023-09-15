@@ -23,12 +23,28 @@ experience.addEventListener('click', () => {
 
 // Theme toogle mode
 const themeToggle = document.getElementById("theme-toggle");
+const body = document.body;
+const logoImage = document.getElementById("logo-image");
+const footerImage = document.getElementById("footer-logo");
 
 themeToggle.addEventListener("change", () => {
-  const body = document.body;
   if (themeToggle.checked) {
-    body.style.setProperty("--background-color", "var(--dark-background-color)");
-  } else {
     body.style.setProperty("--background-color", "var(--light-background-color)");
+    logoImage.src = "images/blue-logo.png";
+    footerImage.src = "images/blue-logo.png";
+  } else {
+    body.style.setProperty("--background-color", "var(--dark-background-color)");
+    logoImage.src = "images/logo.png";
+    footerImage.src = "images/logo.png";
   }
 });
+
+if (themeToggle.checked) {
+  body.style.setProperty("--background-color", "var(--light-background-color)");
+  logoImage.src = "images/blue-logo.png";
+  footerImage.src = "images/blue-logo.png";
+} else {
+  body.style.setProperty("--background-color", "var(--dark-background-color)");
+  logoImage.src = "images/logo.png";
+  footerImage.src = "images/logo.png";
+}

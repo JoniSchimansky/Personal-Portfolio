@@ -130,11 +130,11 @@ nav .theme-toggle-container {
     align-items: center;
   }
   
-  nav .theme-toggle-container span {
+nav .theme-toggle-container span {
     color: #fff;
     font-size: 1rem;
     margin: 0 5px; 
-  }
+}
 
 .container {
     max-width: 1200px;
