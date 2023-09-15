@@ -27,6 +27,7 @@ const body = document.body;
 const logoImage = document.getElementById("logo-image");
 const footerImage = document.getElementById("footer-logo");
 const navLinks = document.querySelectorAll(".link a");
+const toogleIcons = document.querySelectorAll(".theme-toggle-container span");
 
 themeToggle.addEventListener("change", () => {
     if (themeToggle.checked) {
@@ -34,14 +35,20 @@ themeToggle.addEventListener("change", () => {
         logoImage.src = "images/blue-logo.png";
         footerImage.src = "images/blue-logo.png";
         navLinks.forEach(link => {
-            link.style.color = "var(--nav-light-color)";
+            link.style.color = "var(--text-light-color)";
+        });
+        toogleIcons.forEach(icon => {
+            icon.style.color = "var(--text-light-color)";
         });
     } else {
         body.style.setProperty("--background-color", "var(--dark-background-color)");
         logoImage.src = "images/logo.png";
         footerImage.src = "images/logo.png";
         navLinks.forEach(link => {
-            link.style.color = "var(--nav-dark-color)";
+            link.style.color = "var(--text-dark-color)";
+        });
+        toogleIcons.forEach(icon => {
+            icon.style.color = "var(--text-dark-color)";
         });
     }
 });
@@ -51,13 +58,19 @@ if (themeToggle.checked) {
     logoImage.src = "images/blue-logo.png";
     footerImage.src = "images/blue-logo.png";
     navLinks.forEach(link => {
-        link.style.color = "var(--nav-light-color)";
+        link.style.color = "var(--text-light-color)";
+    });
+    toogleIcons.forEach(icon => {
+        icon.style.color = "var(--text-light-color)";
     });
 } else {
     body.style.setProperty("--background-color", "var(--dark-background-color)");
     logoImage.src = "images/logo.png";
     footerImage.src = "images/logo.png";
     navLinks.forEach(link => {
-        link.style.color = "var(--nav-dark-color)";
+        link.style.color = "var(--text-dark-color)";
+    });
+    toogleIcons.forEach(icon => {
+        icon.style.color = "var(--text-dark-color)";
     });
 }

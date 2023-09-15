@@ -9,12 +9,12 @@
     /* Light mode */
     --light-background-color: #f5f5f5;
     --light-text-color: black;
-    --nav-light-color: #333;
+    --text-light-color: #333;
 
     /* Dark mode */
     --dark-background-color: #181818;
     --dark-text-color: #fff;
-    --nav-dark-color: #fff;
+    --text-dark-color: #fff;
 }
 
 
@@ -130,10 +130,10 @@ nav #theme-toggle:checked+.theme-toggle::before {
 nav .theme-toggle-container {
     display: flex;
     align-items: center;
-  }
+}
   
 nav .theme-toggle-container span {
-    color: #fff;
+    color: var(--text-color);
     font-size: 1rem;
     margin: 0 5px; 
 }
