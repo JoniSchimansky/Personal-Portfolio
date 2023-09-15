@@ -31,6 +31,8 @@ const toogleIcons = document.querySelectorAll(".theme-toggle-container span");
 const headerTitle = document.querySelectorAll("header .content h4");
 const headerSubTitle = document.querySelectorAll("header .content h1");
 const headerText = document.querySelectorAll("header .content p");
+const sectionTitles = document.querySelectorAll(".header");
+const sectionSubTitles = document.querySelectorAll(".sub-header");
 
 themeToggle.addEventListener("change", () => {
     if (themeToggle.checked) {
@@ -54,6 +56,12 @@ themeToggle.addEventListener("change", () => {
         });
         body.classList.add("theme-light");
         body.classList.remove("theme-dark");
+        sectionTitles.forEach(title => {
+            title.style.color = "var(--text-light-color)";
+        });
+        sectionSubTitles.forEach(sub => {
+            sub.style.color = "var(--p-light-color)";
+        });
     } else {
         body.style.setProperty("--background-color", "var(--dark-background-color)");
         logoImage.src = "images/logo.png";
@@ -75,6 +83,12 @@ themeToggle.addEventListener("change", () => {
         });
         body.classList.add("theme-dark");
         body.classList.remove("theme-light");
+        sectionTitles.forEach(title => {
+            title.style.color = "var(--text-dark-color)";
+        });
+        sectionSubTitles.forEach(sub => {
+            sub.style.color = "var(--p-dark-color)";
+        });
     }
 });
 
@@ -98,6 +112,12 @@ if (themeToggle.checked) {
         text.style.color = "var(--p-light-color)";
     });
     body.classList.add("theme-light");
+    sectionTitles.forEach(title => {
+        title.style.color = "var(--text-light-color)";
+    });
+    sectionSubTitles.forEach(sub => {
+        sub.style.color = "var(--p-light-color)";
+    });
 } else {
     body.style.setProperty("--background-color", "var(--dark-background-color)");
     logoImage.src = "images/logo.png";
@@ -118,4 +138,10 @@ if (themeToggle.checked) {
         text.style.color = "var(--p-dark-color)";
     });
     body.classList.add("theme-dark");
+    sectionTitles.forEach(title => {
+        title.style.color = "var(--text-dark-color)";
+    });
+    sectionSubTitles.forEach(sub => {
+        sub.style.color = "var(--p-dark-color)";
+    });
 }
