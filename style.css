@@ -98,6 +98,7 @@ nav .theme-toggle {
     cursor: pointer;
     position: relative;
     border-radius: 25px;
+    border: 1px solid var(--primary-color);
 }
 
 nav .theme-toggle::before {
@@ -115,6 +116,17 @@ nav .theme-toggle::before {
 nav #theme-toggle:checked+.theme-toggle::before {
     left: calc(100% - (25px - 4px) - 2px);
 }
+
+nav .theme-toggle-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .theme-toggle-container span {
+    color: #fff;
+    font-size: 1rem;
+    margin: 0 5px; 
+  }
 
 .container {
     max-width: 1200px;
