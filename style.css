@@ -8,15 +8,17 @@
 
     /* Light mode */
     --light-background-color: #f5f5f5;
-    --light-text-color: black;
     --text-light-color: #333;
     --p-light-color: #1a1a1a;
+    --light-cards-color: #888;
+    --light-cards-hover: #A0A0A0;
 
     /* Dark mode */
     --dark-background-color: #181818;
-    --dark-text-color: #fff;
     --text-dark-color: #fff;
     --p-dark-color: #ccc;
+    --dark-cards-color: #27272a;
+    --dark-cards-hover: #323232;
 }
 
 

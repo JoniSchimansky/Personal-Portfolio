@@ -62,6 +62,8 @@ themeToggle.addEventListener("change", () => {
         sectionSubTitles.forEach(sub => {
             sub.style.color = "var(--p-light-color)";
         });
+        body.style.setProperty("--terciary-color", "var(--light-cards-color)");
+        body.style.setProperty("--cards-hover", "var(--light-cards-hover)");
     } else {
         body.style.setProperty("--background-color", "var(--dark-background-color)");
         logoImage.src = "images/logo.png";
@@ -89,6 +91,8 @@ themeToggle.addEventListener("change", () => {
         sectionSubTitles.forEach(sub => {
             sub.style.color = "var(--p-dark-color)";
         });
+        body.style.setProperty("--terciary-color", "var(--dark-cards-color)");
+        body.style.setProperty("--cards-hover", "var(--dark-cards-hover)");
     }
 });
 
@@ -118,6 +122,8 @@ if (themeToggle.checked) {
     sectionSubTitles.forEach(sub => {
         sub.style.color = "var(--p-light-color)";
     });
+    body.style.setProperty("--terciary-color", "var(--light-cards-color)");
+    body.style.setProperty("--cards-hover", "var(--light-cards-hover)");
 } else {
     body.style.setProperty("--background-color", "var(--dark-background-color)");
     logoImage.src = "images/logo.png";
@@ -144,4 +150,6 @@ if (themeToggle.checked) {
     sectionSubTitles.forEach(sub => {
         sub.style.color = "var(--p-dark-color)";
     });
+    body.style.setProperty("--terciary-color", "var(--dark-cards-color)");
+    body.style.setProperty("--cards-hover", "var(--dark-cards-hover)");
 }
