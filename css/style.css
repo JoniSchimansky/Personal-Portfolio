@@ -361,3 +361,10 @@ span {
     background-color: var(--bg-color);
     width: 50px;
 }
+
+#hidden-text {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
