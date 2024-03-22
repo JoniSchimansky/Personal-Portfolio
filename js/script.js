@@ -37,3 +37,14 @@ function toggleText() {
         btn.textContent = "Close";
     }
 }
+
+// Only numbers on phone form input
+var phoneInput = document.getElementById('phone-input');
+
+    phoneInput.addEventListener('input', function() {
+        var value = phoneInput.value;
+
+        var sanitizedValue = value.replace(/\D/g, '');
+
+        phoneInput.value = sanitizedValue;
+    });
