@@ -41,10 +41,10 @@ function toggleText() {
 // Only numbers on phone form input
 var phoneInput = document.getElementById('phone-input');
 
-    phoneInput.addEventListener('input', function() {
-        var value = phoneInput.value;
+phoneInput.addEventListener('input', function() {
+    var value = phoneInput.value;
 
-        var sanitizedValue = value.replace(/\D/g, '');
+    var sanitizedValue = value.replace(/\D/g, '');
 
-        phoneInput.value = sanitizedValue;
-    });
+    phoneInput.value = sanitizedValue;
+});
