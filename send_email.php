@@ -1,3 +1,5 @@
+
+
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $full_name = $_POST['full_name'];
@@ -16,14 +18,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Send email
     $to = "jonischimansky@gmail.com";
     $headers = "From: $email";
-    mail($to, $subject, $email_body, $headers);
-
-    // Redirection after sending
-    header('Location: index.html?status=success');
-    exit;
+    if (mail($to, $subject, $email_body, $headers)) {
+        // Redirection after sending
+        echo json_encode(["status" => "success"]);
+    } else {
+        // Redirection to error page
+        echo json_encode(["status" => "error"]);
+    }
 } else {
     // Redirection to error page
-    header('Location: index.html?status=error');
-    exit;
+    echo json_encode(["status" => "error"]);
 }
 ?>
+

@@ -66,7 +66,6 @@ window.onscroll = () => {
         if (top >= offset && top < offset + height) {
             navLinks.forEach (links => {
                 links.classList.remove('active');
-                // document.querySelector('header nav a [href*=' + id + ' ]').classList.add('active');
                 document.querySelector('header nav a').classList.add('active');
             })
         }
@@ -77,3 +76,30 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 }
+
+
+// Contact
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    var formData = new FormData(this);
+
+    fetch("send_email.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === "success") {
+            document.getElementById("contact-form").style.display = "none";
+            document.getElementById("response-message").style.display = "block";
+            document.getElementById("response-message").innerHTML = "<p>Message sent successfully!</p>";
+        } else {
+            document.getElementById("response-message").style.display = "block";
+            document.getElementById("response-message").innerHTML = "<p>Error sending message. Please try again later.</p>";
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+});
