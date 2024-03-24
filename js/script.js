@@ -88,7 +88,7 @@ menuIcon.onclick = () => {
         var templateParams = {
             full_name: document.getElementById('full_name').value,
             email: document.getElementById('email').value,
-            phone_number: document.getElementById('phone_number').value,
+            phone_number: document.getElementById('phone_input').value,
             subject: document.getElementById('subject').value,
             message: document.getElementById('message').value
         };
