@@ -79,27 +79,29 @@ menuIcon.onclick = () => {
 
 
 // Contact
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+(function() {
+    emailjs.init('service_3f4qedi');
     
-    var formData = new FormData(this);
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        var templateParams = {
+            full_name: document.getElementById('full_name').value,
+            email: document.getElementById('email').value,
+            phone_number: document.getElementById('phone_number').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value
+        };
 
-    fetch("send_email.php", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === "success") {
-            document.getElementById("contact-form").style.display = "none";
-            document.getElementById("response-message").style.display = "block";
-            document.getElementById("response-message").innerHTML = "<p>Message sent successfully!</p>";
-        } else {
-            document.getElementById("response-message").style.display = "block";
-            document.getElementById("response-message").innerHTML = "<p>Error sending message. Please try again later.</p>";
-        }
-    })
-    .catch(error => {
-        console.error("Error:", error);
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+            .then(function(response) {
+                console.log('Correo electrónico enviado correctamente', response);
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('errorMessage').style.display = 'none';
+            }, function(error) {
+                console.error('Error al enviar el correo electrónico', error);
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('successMessage').style.display = 'none';
+            });
     });
-});
+})();
