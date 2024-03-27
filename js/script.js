@@ -38,17 +38,7 @@ function toggleText() {
     }
 }
 
-// Only numbers on phone form input
-var phoneInput = document.getElementById('phone-input');
-
-phoneInput.addEventListener('input', function() {
-    var value = phoneInput.value;
-
-    var sanitizedValue = value.replace(/\D/g, '');
-
-    phoneInput.value = sanitizedValue;
-});
-
+// Responsive menu
 // Responsive menu
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
@@ -56,23 +46,27 @@ let navbar = document.querySelector('.navbar');
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
-window.onscroll = () => {
-    sections.forEach (sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+window.addEventListener('scroll', () => {
+    let fromTop = window.scrollY + 150;
 
-        if (top >= offset && top < offset + height) {
-            navLinks.forEach (links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a').classList.add('active');
-            })
+    sections.forEach(sec => {
+        if (sec.offsetTop <= fromTop && sec.offsetTop + sec.offsetHeight > fromTop) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`header nav a[href="#${sec.getAttribute('id')}"]`).classList.add('active');
         }
-    })
-}
+    });
+});
 
 menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
-}
+};
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuIcon.classList.remove('bx-x');
+        navbar.classList.remove('active');
+    });
+});
