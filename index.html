@@ -204,7 +204,8 @@
 
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
-        <form id="contactForm">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="da821faa-2c9f-42e9-b68e-0ddb608a52ec">
             <div class="input-group">
                 <div class="input-box">
                     <input type="text" id="full_name" placeholder="Full Name" required>
@@ -220,8 +221,6 @@
                 <input type="submit" value="Send Message" class="btn">
             </div>
         </form>
-        <div id="successMessage" style="display: none; color: green;">Message sent successfully!</div>
-        <div id="errorMessage" style="display: none; color: red;">Error sending message. Please try again later.</div>
     </section>
 
     <footer class="footer">

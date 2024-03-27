@@ -76,32 +76,3 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 }
-
-
-// Contact
-(function() {
-    emailjs.init('service_3f4qedi');
-    
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        var templateParams = {
-            full_name: document.getElementById('full_name').value,
-            email: document.getElementById('email').value,
-            phone_number: document.getElementById('phone_input').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-        };
-
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-            .then(function(response) {
-                console.log('Correo electrónico enviado correctamente', response);
-                document.getElementById('successMessage').style.display = 'block';
-                document.getElementById('errorMessage').style.display = 'none';
-            }, function(error) {
-                console.error('Error al enviar el correo electrónico', error);
-                document.getElementById('errorMessage').style.display = 'block';
-                document.getElementById('successMessage').style.display = 'none';
-            });
-    });
-})();
